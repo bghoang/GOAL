@@ -42,7 +42,7 @@ class Tag extends Component {
 
         <Modal show={this.state.showModal} onHide={this.close} size='xl'>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div>Modal content here </div>
