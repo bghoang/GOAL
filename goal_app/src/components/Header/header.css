@@ -1,0 +1,24 @@
+.brand {
+  height: 100px;
+}
+
+.big-header {
+  margin-top: 15px;
+  margin-left: 60px;
+  font-size: 40px;
+}
+
+.home {
+  margin-left: 500px;
+  font-size: 30px;
+}
+
+.contact {
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+.about {
+  margin-left: 15px;
+  font-size: 30px;
+}

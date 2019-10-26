@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import "./header.css";
+import "./footer.css";
 
-class Header extends Component {
+class Footer extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="dark" variant="dark" fixed="top">
+        <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#home" className="brand">
             <h1 className="big-header">GOAL</h1>
           </Navbar.Brand>
@@ -31,4 +31,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Footer;
