@@ -11,8 +11,8 @@ class Tag extends Component {
             margin: "2rem"
           }}
         >
-          <Card.Img variant="top" src={this.props.photo} />
-          <Card.Body>
+          <Card.Img variant="top" src={this.props.photo} style={{}} />
+          <Card.Body style={{}}>
             <Card.Title>{this.props.name}</Card.Title>
           </Card.Body>
         </Card>

@@ -6,6 +6,7 @@ import { SocialIcon } from "react-social-icons";
 
 class Footer extends Component {
   render() {
+    const CURRENT_YEAR = new Date().getFullYear();
     return (
       <div>
         <Navbar bg="dark" variant="dark">
@@ -36,7 +37,9 @@ class Footer extends Component {
               />
             </Nav>
           </Navbar.Collapse>
-          <Navbar className="copyright">© 2019 Copyright: Goal.com</Navbar>
+          <Navbar className="copyright">
+            © {CURRENT_YEAR} Copyright: Goal.com
+          </Navbar>
         </Navbar>
       </div>
     );
