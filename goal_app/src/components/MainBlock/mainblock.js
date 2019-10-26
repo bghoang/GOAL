@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tag from "./Tag/tag";
+import Extra from "./Tag/extra"
 import "./mainblock.css";
 import Info from "./tagInfor";
 
@@ -16,6 +17,8 @@ class MainBlock extends Component {
         {Info.map(m => (
           <Tag {...m} />
         ))}
+
+        <Extra />
       </div>
     );
   }
