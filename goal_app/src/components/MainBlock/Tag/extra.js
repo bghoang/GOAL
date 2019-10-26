@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+
 
 class Extra extends Component {
   constructor(props, context) {
@@ -12,7 +14,8 @@ class Extra extends Component {
   
     this.initialState = {
       showModal: false,
-      categorySelect: "Select a Category"
+      categorySelect: "Select a Category",
+      showOther: false
     };
 
     this.state = this.initialState;
@@ -23,6 +26,10 @@ class Extra extends Component {
 
   }
 
+  submit() {
+    //Update database here
+    alert('success')
+  }
   close(){
     this.setState(() => this.initialState);
   }
@@ -33,6 +40,9 @@ class Extra extends Component {
 
   handleSelect(e) {
     this.setState({ categorySelect: e });
+    if(e === 'Other') {
+        this.setState({ showOther: true });
+    }
   }
 
 
@@ -70,11 +80,21 @@ class Extra extends Component {
                 <Dropdown.Item eventKey="Travel">Travel</Dropdown.Item>
                 <Dropdown.Item eventKey="Lifestyle">Lifestyle</Dropdown.Item>
                 <Dropdown.Item eventKey="Personal">Personal</Dropdown.Item>
+                <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
                 </DropdownButton>
+            </InputGroup>
+            <InputGroup className="mb-3">
+                <FormControl
+                hidden={!this.state.showOther}
+                placeholder="Enter Category"
+                aria-label="Enter Category"
+                aria-describedby="basic-addon2"
+                />
             </InputGroup>
             </div>
           </Modal.Body>
           <Modal.Footer>
+            <Button onClick={this.submit}>Add</Button>
             <Button onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
