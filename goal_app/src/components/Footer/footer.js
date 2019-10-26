@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import "./footer.css";
+import { SocialIcon } from "react-social-icons";
 
 class Footer extends Component {
   render() {
@@ -9,22 +10,33 @@ class Footer extends Component {
       <div>
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand className="brand">
-            <h1 className="big-footer">LOCATION</h1>
+            <h3 className="big-footer">LOCATION</h3>
+            <div className="location">
+              2215 John Daniel Drive Clark, MO 65243
+            </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#home" className="home">
-                Home
-              </Nav.Link>
-              <Nav.Link href="#link" className="about">
-                About
-              </Nav.Link>
-              <Nav.Link href="#link" className="contact">
-                Contact
-              </Nav.Link>
+            <Nav className="social">
+              <SocialIcon
+                className="twitter"
+                url="http://twitter.com/jaketrent"
+              />
+              <SocialIcon
+                className="other"
+                url="http://facebook.com/jaketrent"
+              />
+              <SocialIcon
+                className="other"
+                url="http://linkedin.com/jaketrent"
+              />
+              <SocialIcon
+                className="other"
+                url="http://instagram.com/jaketrent"
+              />
             </Nav>
           </Navbar.Collapse>
+          <Navbar className="copyright">© 2019 Copyright: Goal.com</Navbar>
         </Navbar>
       </div>
     );
