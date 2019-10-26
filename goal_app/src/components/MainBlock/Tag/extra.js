@@ -3,8 +3,7 @@ import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-class Tag extends Component {
-
+class Extra extends Component {
   constructor(props, context) {
     super(props, context);
   
@@ -34,13 +33,10 @@ class Tag extends Component {
           }}
           border='light'
         >
-          <Card.Img variant="top" src={this.props.photo} style={{}} />
-          <Card.Body style={{}}>
-            <Card.Title>{this.props.name}</Card.Title>
-          </Card.Body>
+          <Card.Img variant="top" src={"https://img.icons8.com/pastel-glyph/2x/plus.png"} style={{}} />
         </Card>
 
-        <Modal show={this.state.showModal} onHide={this.close} size='xl'>
+        <Modal show={this.state.showModal} onHide={this.close} size='m'>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
@@ -57,4 +53,4 @@ class Tag extends Component {
   }
 }
 
-export default Tag;
+export default Extra;
