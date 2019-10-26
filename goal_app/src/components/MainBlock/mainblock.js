@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Tag from "./Tag/tag";
 import "./mainblock.css";
-import Info from 
+import Info from "./tagInfor";
 
 class MainBlock extends Component {
   render() {
-    const tagInfo = { name: "test", photo: "src" };
     return (
       <div
         className="tags"
@@ -14,14 +13,9 @@ class MainBlock extends Component {
           paddingBottom: "1rem"
         }}
       >
-        <Tag category={tagInfo.name} />
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
+        {Info.map(m => (
+          <Tag {...m} />
+        ))}
       </div>
     );
   }

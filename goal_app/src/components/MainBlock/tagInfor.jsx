@@ -1,10 +1,11 @@
 export default [
   {
-    name: "Test1",
-    photo: "src"
+    name: "Fitness",
+    photo:
+      "https://i.pinimg.com/originals/6e/94/69/6e94695575a2c897135f7cc0b86800eb.png"
   },
   {
-    name: "Test2",
+    name: "Professional",
     photo: "src"
   },
   {
