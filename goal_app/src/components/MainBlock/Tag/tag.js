@@ -16,7 +16,7 @@ class Tag extends Component {
             src="https://i.pinimg.com/originals/6e/94/69/6e94695575a2c897135f7cc0b86800eb.png"
           />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{this.props.category}</Card.Title>
           </Card.Body>
         </Card>
       </div>
