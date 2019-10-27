@@ -23,7 +23,8 @@
 .user-image:hover{
 	border-style: solid;
 	border-width: 5px;
-	border-color: white;
+	border-color: transparent;
+	cursor: pointer;
 	padding: -5px;
 	opacity: 0.5;
 }
@@ -94,5 +95,5 @@
 }
 
 .jumbotron {
-    background-color: rgb(175,238,238) !important;
+	background-color: rgb(175,238,238) !important;
 }

@@ -3,23 +3,16 @@
 }
 
 .big-header {
-  margin-top: 15px;
   margin-left: 60px;
   font-size: 40px;
 }
 
-.home {
-
-  margin-left: 650px;
+.nav-page {
+  margin-right: 20px;
   font-size: 30px;
 }
 
-.timeline {
-  margin-left: 15px;
-  font-size: 30px;
-}
-
-.goals {
-  margin-left: 15px;
-  font-size: 30px;
+.nav-page > .active > a {
+  color: aqua !important;
+  background-color: chartreuse;    
 }

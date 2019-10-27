@@ -4,7 +4,6 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import './userprofile.css'
 import './fontawesome/css/all.css'	
-import avatar_default from './avatar_default.png';
 import {editUsername, editGoal, editAvatar} from './functions.js'
 import db from '../MainBlock/Task/db';
 
@@ -40,7 +39,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div className="jumbotron">
-        <Jumbotron  fluid >
+        <Jumbotron fluid >
         <Container >
             <img src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg"
             class="user-image" alt="UserPic" height="300" width="300" onClick = {editAvatar}/>

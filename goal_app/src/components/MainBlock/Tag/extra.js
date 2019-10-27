@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-
+import "./tag.css"
 
 class Extra extends Component {
   constructor(props, context) {
@@ -57,7 +57,7 @@ class Extra extends Component {
           }}
           border='light'
         >
-          <Card.Img variant="top" src={"https://img.icons8.com/pastel-glyph/2x/plus.png"} style={{}} />
+          <Card.Img variant="top" src={"https://img.icons8.com/pastel-glyph/2x/plus.png"} style={{}} className="tag"/>
         </Card>
 
         <Modal show={this.state.showModal} onHide={this.close} size='m'>

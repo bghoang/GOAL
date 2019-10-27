@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Goal from "../Task/goal";
+import "./tag.css"
 
 class Tag extends Component {
   constructor(props, context) {
@@ -31,7 +32,7 @@ class Tag extends Component {
           className="tag"
           style={{
             width: "18rem",
-            margin: "2rem"
+            margin: "1.5rem"
           }}
           border="light"
         >

@@ -9,7 +9,7 @@ class Footer extends Component {
     const CURRENT_YEAR = new Date().getFullYear();
     return (
       <div>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" fixed="bottom">
           <Navbar.Brand className="brand">
             <h3 className="big-footer">LOCATION</h3>
             <div className="location">

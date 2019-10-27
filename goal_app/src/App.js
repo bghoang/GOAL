@@ -12,15 +12,19 @@ import {AuthProvider} from "./auth/Auth";
 import Home from "./routes/Home";
 import Login from "./routes/LogIn";
 import SignUp from './routes/SignUp';
+import Timeline from './routes/Timeline';
+import Goals from './routes/Goals';
 
 function App() {
   return (
       <AuthProvider>
         <Router>
             <div>
-                <PrivateRoute exact path="/" component={Home} />
+                <PrivateRoute exact path="/home" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/timeline" component={Timeline} />
+                <Route exact path="/goals" component={Goals} />
             </div>
         </Router>
       </AuthProvider>
