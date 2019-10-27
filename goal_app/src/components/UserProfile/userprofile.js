@@ -5,16 +5,15 @@ import Container from "react-bootstrap/Container";
 import './userprofile.css'
 import './fontawesome/css/all.css'	
 import avatar_default from './avatar_default.png';
-
 import {editUsername, editGoal, editAvatar} from './functions.js'
 import db from '../MainBlock/Task/db';
-//import {AuthContext} from '../../auth/Auth';
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {currentEmail: ""};
   }
+
   componentDidMount(){
     db.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser){
@@ -26,36 +25,26 @@ class UserProfile extends Component {
       }
     });
   }
+
+  fetchQuote(event){ 
+    event.preventDefault();
+    fetch("https://healthruwords.p.rapidapi.com/v1/quotes/?id=731&t=Wisdom&maxR=1&size=medium", {
+              "method": "GET",
+              "headers": {
+                "x-rapidapi-host": "healthruwords.p.rapidapi.com",
+                "x-rapidapi-key": "SIGN-UP-FOR-KEY"
+              }
+    })
+  };
+
   render() {
     return (
       <div className="jumbotron">
-        <Jumbotron  fluid>
-			<Container>
-				<img src={avatar_default} class="user-image" id="avatar" alt="avatar default" onClick= {editAvatar} />
-				<center>
-					<div class = "user-name" id="userNameDiv">
-						<p class = "user-name-font" id="userName"> User Name 
-						</p>
-						<button class = "edit-userName" id="edit-userName" onClick = {editUsername} > <i class="far fa-edit" id="userName-edit-logo"></i> </button>
-					</div>
-				</center>
-
-				<p class = "custom-font">
-					<i class="far fa-hand-point-down"></i> Upcoming goal <i class="far fa-hand-point-down"></i>
-					<div class = "goal-headline" id="goal-headline">
-						<p class = "inner-headline-text" id="goal"> This is my most recent upcoming goal at the moment. 
-						</p>
-						<button class = "edit-goal" onClick={editGoal} > <i class="far fa-edit" id="goal-edit-logo"></i> </button>
-					</div>
-				</p>
-			</Container>
+        <Jumbotron  fluid >
         <Container >
-            <img src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="UserPic" height="200" width="200"/>
+            <img src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg"
+            class="user-image" alt="UserPic" height="300" width="300" onClick = {editAvatar}/>
             <h1 className="userName">{this.state.currentEmail}</h1>
-            <p>
-            This is a modified jumbotron that occupies the entire horizontal space of
-            its parent.
-            </p>
         </Container>
         </Jumbotron>
       </div>
@@ -63,3 +52,13 @@ class UserProfile extends Component {
   }
 }
 export default UserProfile;
+
+/**			<Container>
+				<center>
+					<div class = "user-name" id="userNameDiv">
+						<p class = "user-name-font" id="userName"> User Name 
+						</p>
+						<button class = "edit-userName" id="edit-userName" onClick = {editUsername} > <i class="far fa-edit" id="userName-edit-logo"></i> </button>
+					</div>
+				</center>
+			</Container> */

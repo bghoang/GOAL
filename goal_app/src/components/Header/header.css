@@ -1,5 +1,5 @@
 .brand {
-  height: 100px;
+  height: 60px;
 }
 
 .big-header {
@@ -9,6 +9,7 @@
 }
 
 .home {
+
   margin-left: 650px;
   font-size: 30px;
 }

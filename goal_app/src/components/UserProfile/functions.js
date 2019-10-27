@@ -6,7 +6,7 @@ export function editUsername(){
 	if(editingUsername){
 		
 		var updatedNameString = document.getElementById("userName-input").value;
-		if(updatedNameString == ""){
+		if(updatedNameString === ""){
 			updatedNameString = "User Name"
 		}
 		document.getElementById('userName-input').remove();
@@ -38,7 +38,7 @@ export function editUsername(){
 export function editGoal(){
 	if(editingGoal){
 		var updatedGoalString = document.getElementById("goal-input").value;
-		if(updatedGoalString == ""){
+		if(updatedGoalString === ""){
 			updatedGoalString = "This is my most recent upcoming goal at the moment.";
 		}
 		document.getElementById('goal-input').remove();

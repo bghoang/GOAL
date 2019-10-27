@@ -17,7 +17,7 @@ class MainBlock extends Component {
           }}
         >
           {Info.map(m => (
-            <Tag {...m} />
+            <Tag {...m} className="tag" />
           ))}
 
           <Extra />
