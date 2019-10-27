@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import db from "../Task/db";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
 class AddButton extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class AddButton extends Component {
     this.firebaseRef.off();
   }
 
-  pushToFirebase(event) {
+  pushToFirebase(event  ) {
     const {
       goal,
       status,
@@ -49,6 +50,7 @@ class AddButton extends Component {
   render() {
     return (
       <div>
+        <Container>
         <Form.Label style={{ fontSize: "60px" }}>Goal</Form.Label>
         <Form.Control
           style={{ marginBottom: "15px" }}
@@ -107,7 +109,8 @@ class AddButton extends Component {
             marginTop: "5px",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            marginBottom: "10rem"
           }}
         >
           <Button
@@ -118,6 +121,7 @@ class AddButton extends Component {
             Add Goal
           </Button>
         </div>
+        </Container>
       </div>
     );
   }
