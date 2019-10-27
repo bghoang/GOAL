@@ -12,9 +12,9 @@
 
 ## TODOs:
 - Sign up -> add gender -> default avatar + add name
-- Move categories to Goals page
+- ~~Move categories to Goals page~~
 - Current goals in profile page
-- Route pages 
+- ~~Route pages~~ 
 - Timeline
 - Add Goal push to database
 - Fix Header
