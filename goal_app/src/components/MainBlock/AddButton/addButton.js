@@ -38,7 +38,6 @@ class AddButton extends Component {
     this.firebaseRef = db.database().ref("goals");
   }
     pushToFirebase(event) {
-    alert(this.state.currentEmail);
     const {goal, target_date, status, category} = event.target.elements;
     var data = {"Goal": goal.value, "Target_Date": target_date.value, 
       "Category": this.state.categorySelect, "Status": this.state.statusSelect};

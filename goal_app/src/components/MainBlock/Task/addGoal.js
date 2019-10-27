@@ -7,27 +7,46 @@ class AddGoal extends Component {
     super(props);
 
     this.state = {
-      items: []
+      currentEmail:"",
+      goals: []
     };
-    this.firebaseRef = db.database().ref("goals");
-    this.firebaseRef.on("value", dataSnapshot => {
-      let items = [];
 
-      dataSnapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        item[".key"] = childSnapshot.key;
-        items.push(item);
-      });
-
-      this.setState({ items });
-    });
   }
+
+  // get current useremail
+  componentDidMount() {
+    db.auth().onAuthStateChanged(firebaseUser => {
+      if (firebaseUser) {
+        this.setState({ currentEmail: firebaseUser.email.replace(/\./g, '') });
+        this.firebaseRef = db.database().ref(db.auth().currentUser.email.replace(/\./g, '')).child('Goals');
+
+        this.firebaseRef.once("value", snapshot => {
+          let items = [];
+
+          snapshot.forEach(childSnapshot => {
+            let item = childSnapshot.val();
+            if(item.Category == this.props.name) {
+              items.push(item);
+            }
+          });
+
+          this.setState({goals: items})
+        });
+      } else {
+        console.log("not logged in");
+      }
+    });
+
+    
+  }
+
   componentWillUnmount() {
     this.firebaseRef.off();
   }
 
   render() {
     const nameTag = this.props.name;
+
     function showGoal(tag, goal) {
       if (tag === nameTag) {
         return goal;
@@ -35,28 +54,28 @@ class AddGoal extends Component {
         return;
       }
     }
-    function check(status, tag) {
-      if (status === "Incomplete" && tag === nameTag) {
-        return "danger";
-      }
-      if (status === "In progress" && tag === nameTag) {
+    function check(status) {
+      if (status === "Inactive") {
         return "warning";
       }
-      if (status === "Completed" && tag === nameTag) {
+      if (status === "Active") {
         return "success";
       } else {
         return "none";
       }
     }
 
-    const records = this.state.items.map(items => (
+    return (
       <ListGroup>
-        <ListGroup.Item action variant={check(items.status, items.category)}>
-          {showGoal(items.category, items.goal)}
-        </ListGroup.Item>
+        {this.state.goals.map(item => (
+          <ListGroup.Item variant={check(item.Status)}>
+            <p>{item.Goal}</p> 
+            <p>Target Date: {item.Target_Date}</p>
+            
+          </ListGroup.Item>
+        ))}
       </ListGroup>
-    ));
-    return <div>{records}</div>;
+    )
   }
 }
 export default AddGoal;
