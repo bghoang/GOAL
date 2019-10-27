@@ -35,7 +35,7 @@ class Tag extends Component {
           border="light"
         >
           <Card.Img variant="top" src={this.props.photo} style={{}} />
-          <Card.Body style={{}}>
+          <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
           </Card.Body>
         </Card>
@@ -53,7 +53,7 @@ class Tag extends Component {
           </Modal.Header>
           <Modal.Body>
             <div>
-              <Goal />
+              <Goal goalname={this.props.name} />
             </div>
           </Modal.Body>
           <Modal.Footer>
