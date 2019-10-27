@@ -28,6 +28,7 @@ class Tag extends Component {
       <div>
         <Card
           onClick={this.open}
+          className="tag"
           style={{
             width: "18rem",
             margin: "2rem"
