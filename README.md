@@ -10,7 +10,7 @@
 - Make Sub Goals
 
 ## TODOs:
-- Sign up -> add gender -> default avatar
+- Sign up -> add gender -> default avatar + add name
 - Move categories to Goals page
 - Current goals in profile page
 - Route pages 
