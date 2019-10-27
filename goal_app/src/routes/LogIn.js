@@ -6,9 +6,12 @@ import db from "../components/MainBlock/Task/db"
 import "bootstrap/dist/css/bootstrap.min.css";
 import {provider, provider2} from "../components/MainBlock/Task/db";
 import Form from 'react-bootstrap/Form'
-
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 const Login = ({history}) => {
+
 	const handleLogin = (event) => {
+		console.log("pressed log in");
 		event.preventDefault();
 		const {email, password} = event.target.elements;
 		try{
@@ -31,23 +34,30 @@ const Login = ({history}) => {
       }
 
 	return(
-		<div className="centered">
-			<h1>Log In</h1>
-			<form onSubmit={handleLogin}>
-				<Form.Label>
-					Email
-				</Form.Label>
-				<input name="email" type="email" placeholder="Email"/>
-				<label>
-					Password
-				</label>
-				<input name="password" type="password" placeholder="Password"/>
-				<button type="submit">Log In</button>
-			</form>
-			<button onClick={redirectSignUp}> Sign UP </button>
-			{/*<button onClick={handleLoginWithGoogle}>Log In with Google</button>*/}
-      		 {/*<button onClick={handleLoginWithFb}>Log In with Facebook</button>*/}
-		</div>	
+		<div className = "centered">
+			<Container id="LogIn" >
+				<h1> Welcome to GOAL!</h1>
+				<h3>Log In</h3>
+				<Form onSubmit={handleLogin}>
+		  			<Form.Group>
+		    			<Form.Label>Email address</Form.Label>
+		    			<Form.Control name = "email" type="email" placeholder="Enter email" />
+		    			<Form.Label>Password</Form.Label>
+		    			<Form.Control name = "password" type="password" placeholder="Password" />
+		    			<br/>
+		    			<Button id = "Button" type="submit">
+		    				Log In
+		  				</Button>
+		  			</Form.Group>
+		  			<Form.Text className="text-muted">
+		      			Don't have an account?
+		  			</Form.Text>
+		   			<Button id = "Button" onClick={redirectSignUp}>
+		    			Sign Up
+		  			</Button>
+				</Form>
+			</Container>
+		</div>
 	);
 };
 export default Login;

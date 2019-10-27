@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+#LogIn{
+	background-color: #f2eee5; 
+}
+#SignUp{
+	background-color:#c2e8ce; 
+}
+#Button{
+	background:#e3b04b;
+	color: #FFFF;
+}
+#signupbutton{
+	background: #4b8e8d;
+}
