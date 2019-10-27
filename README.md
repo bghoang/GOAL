@@ -17,5 +17,5 @@
 - ~~Route pages~~ 
 - Timeline
 - Add Goal push to database
-- Fix Header
+- ~~Fix Header~~
 - Add motivational quote API call
