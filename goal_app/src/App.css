@@ -18,3 +18,16 @@
  	background-image: url("./images/background.png");
 	background-color: #cccccc;
 }
+#avoidfooter{
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+#foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}

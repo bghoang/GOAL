@@ -37,6 +37,7 @@ class UserProfile extends Component {
         <Jumbotron fluid>
           <Container>
             <img
+              id="avatar"
               src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg"
               class="user-image"
               alt="UserPic"
