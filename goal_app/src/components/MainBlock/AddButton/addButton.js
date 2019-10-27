@@ -98,7 +98,7 @@ class AddButton extends Component {
             <Form.Control
               type="Category"
               placeholder="Enter the category for this goal"
-              onChange={e => this.setState({ status: e.target.value })}
+              onChange={e => this.setState({ category: e.target.value })}
             />
           </Form.Group>
         </Form.Row>
