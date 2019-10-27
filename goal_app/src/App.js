@@ -17,7 +17,7 @@ import Goals from "./routes/Goals";
 
 function App() {
   return (
-      <AuthProvider>
+      <AuthProvider id="signupback">
         <Router>
             <div>
                 <PrivateRoute exact path="/" component={Home} />
@@ -33,7 +33,7 @@ function App() {
 
 /** function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
       <UserProfile />
       <MainBlock />

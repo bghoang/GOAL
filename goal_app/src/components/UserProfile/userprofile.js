@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
+
 import "./userprofile.css";
 import "./fontawesome/css/all.css";
 import { editUsername, editGoal, editAvatar } from "./functions.js";
 import db from "../MainBlock/Task/db";
 import API from "./api";
+import "../../App.css";
 
 class UserProfile extends Component {
   constructor(props) {

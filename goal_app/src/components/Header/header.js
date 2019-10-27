@@ -3,7 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import "./header.css";
 import db from "../MainBlock/Task/db"
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import ReactTooltip from 'react-tooltip';
 //const btnLogout = document.getElementById('btnLogout');
 function LogOut(e){
     console.log("triggered");
@@ -20,20 +21,29 @@ class Header extends Component {
       <div>
         <Navbar bg="dark" variant="dark" fixed="top">
           <Navbar.Brand href="/" className="brand">
-              <h1 className="big-header">GOAL</h1>
+              <h1 className="big-header"><p role="image" aria-label="target">G🎯AL</p></h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto" sticky='top'>
               <Nav.Link href="/" className="nav-page">
-                  Home
+                <a id="tooltip" class="fa fa-home" aria-hidden="true">
+                  <span class="tooltiptext">Home</span>
+                </a>
               </Nav.Link>
-              <Nav.Link href="timeline" className="nav-page">
-                Timeline
+
+              <Nav.Link href="timeline" className="nav-page"> 
+                <a id="tooltip" class="fa fa-calendar-check" aria-hidden="true">
+                  <span class="tooltiptext">Timeline</span>
+                </a>
               </Nav.Link>
+              
               <Nav.Link href="goals" className="nav-page">
-                Goals
+                <a id="tooltip" class="fa fa-bullseye" aria-hidden="true" >
+                    <span class="tooltiptext">Goals</span>
+                  </a>
               </Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
         <Button onClick={LogOut} variant="primary" type="submit">
