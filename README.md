@@ -16,3 +16,4 @@
 - Route pages 
 - Timeline
 - Add Goal push to database
+- Fix Header
