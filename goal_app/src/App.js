@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
 //import Header from "./components/Header/header";
@@ -8,12 +8,12 @@ import "./App.css";
 //import MainBlock from "./components/MainBlock/mainblock";
 
 import PrivateRoute from "./auth/PrivateRoute";
-import {AuthProvider} from "./auth/Auth";
+import { AuthProvider } from "./auth/Auth";
 import Home from "./routes/Home";
 import Login from "./routes/LogIn";
-import SignUp from './routes/SignUp';
-import Timeline from './routes/Timeline';
-import Goals from './routes/Goals';
+import SignUp from "./routes/SignUp";
+import Timeline from "./routes/Timeline";
+import Goals from "./routes/Goals";
 
 function App() {
   return (
@@ -31,7 +31,6 @@ function App() {
   );
 }
 
-
 /** function App() {
   return (
     <div className="App" >
@@ -43,4 +42,4 @@ function App() {
   );
 }
 **/
-export default App; 
+export default App;

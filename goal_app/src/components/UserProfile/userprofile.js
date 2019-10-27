@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import {useEffect, useState} from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import './userprofile.css'
-import './fontawesome/css/all.css'	
-import {editUsername, editGoal, editAvatar} from './functions.js'
-import db from '../MainBlock/Task/db';
+
+import "./userprofile.css";
+import "./fontawesome/css/all.css";
+import { editUsername, editGoal, editAvatar } from "./functions.js";
+import db from "../MainBlock/Task/db";
+import API from "./api";
 import "../../App.css";
+
 class UserProfile extends Component {
   constructor(props) {
     super(props);
@@ -18,39 +20,35 @@ class UserProfile extends Component {
     this.firebaseRef = db.database().ref("userprofile");
   }
 
-  componentDidMount(){
+  componentDidMount() {
     db.auth().onAuthStateChanged(firebaseUser => {
-      if(firebaseUser){
-        this.setState({currentEmail: firebaseUser.email});
-        console.log(typeof(firebaseUser))
+      if (firebaseUser) {
+        this.setState({ currentEmail: firebaseUser.email });
+        console.log(typeof firebaseUser);
         console.log(firebaseUser.email);
-      } else{
-        console.log('not logged in');
+      } else {
+        console.log("not logged in");
       }
     });
   }
 
-  fetchQuote(event){ 
-    event.preventDefault();
-    fetch("https://healthruwords.p.rapidapi.com/v1/quotes/?id=731&t=Wisdom&maxR=1&size=medium", {
-              "method": "GET",
-              "headers": {
-                "x-rapidapi-host": "healthruwords.p.rapidapi.com",
-                "x-rapidapi-key": "SIGN-UP-FOR-KEY"
-              }
-    })
-  };
-
   render() {
     return (
       <div className="jumbotron">
-        <Jumbotron fluid >
-        <Container >
-            <img src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg"
-            class="user-image" alt="UserPic" height="300" width="300" onClick = {editAvatar}/>
+        <Jumbotron fluid>
+          <Container>
+            <img
+              src="https://icon-library.net/images/avatar-icon-images/avatar-icon-images-4.jpg"
+              class="user-image"
+              alt="UserPic"
+              height="300"
+              width="300"
+              onClick={editAvatar}
+            />
             <h1 className="userName">{this.state.currentEmail}</h1>
-        </Container>
+          </Container>
         </Jumbotron>
+        <API />
       </div>
     );
   }
