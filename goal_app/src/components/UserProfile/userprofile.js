@@ -6,7 +6,7 @@ import './userprofile.css'
 import './fontawesome/css/all.css'	
 import {editUsername, editGoal, editAvatar} from './functions.js'
 import db from '../MainBlock/Task/db';
-
+import "../../App.css";
 class UserProfile extends Component {
   constructor(props) {
     super(props);

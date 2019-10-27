@@ -6,6 +6,7 @@ import UserProfile from "../components/UserProfile/userprofile";
 import Footer from "../components/Footer/footer";
 import MainBlock from "../components/MainBlock/mainblock";
 import AddButton from "../components/MainBlock/AddButton/addButton";
+import Container from 'react-bootstrap/Container'
 
 const Home = () =>{
   return (

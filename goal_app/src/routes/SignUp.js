@@ -5,12 +5,12 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import UserProfile from '../components/UserProfile/userprofile.js'
-
+//import background from "../images/background.png";
 function pushUserIntoDB(name, email){
 	//event.preventDefault();
 	console.log(name);
 	email = email.replace(/\./g, '');
-   	db.database().ref(email).set(name);
+   	db.database().ref(email).child("name").set(name);
 }
 const SignUp = ({history}) => {
 	const redirectLogIn = () => {
@@ -36,7 +36,7 @@ const SignUp = ({history}) => {
      }
   
 	return(
-		<div  className="centered" >
+		<div  className="centered">
 		<Container id = "SignUp">
 		<h1> Sign Up </h1>
 		<Form onSubmit={handleSignUp}>
