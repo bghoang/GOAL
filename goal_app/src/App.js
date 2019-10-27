@@ -17,17 +17,17 @@ import Goals from "./routes/Goals";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <div>
-          <PrivateRoute exact path="/home" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/timeline" component={Timeline} />
-          <Route exact path="/goals" component={Goals} />
-        </div>
-      </Router>
-    </AuthProvider>
+      <AuthProvider>
+        <Router>
+            <div>
+                <PrivateRoute exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/timeline" component={Timeline} />
+                <Route exact path="/goals" component={Goals} />
+            </div>
+        </Router>
+      </AuthProvider>
   );
 }
 
