@@ -5,12 +5,14 @@ import Header from "../components/Header/header";
 import UserProfile from "../components/UserProfile/userprofile";
 import Footer from "../components/Footer/footer";
 import MainBlock from "../components/MainBlock/mainblock";
+import AddButton from "../components/MainBlock/AddButton/addButton";
 
 const Home = () =>{
   return (
     <div className="App">
       <Header />
       <UserProfile />
+      <AddButton/>
       <Footer />
     </div>
   );

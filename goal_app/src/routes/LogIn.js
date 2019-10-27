@@ -18,7 +18,7 @@ const Login = ({history}) => {
 			db
 			.auth()
 			.signInWithEmailAndPassword(email.value,password.value);
-			history.push("/home");
+			history.push("/");
 		} catch(error){
 			console.log(error);
 		} 
@@ -26,7 +26,7 @@ const Login = ({history}) => {
 
 	const { currentUser } = useContext(AuthContext);
       if (currentUser) {
-        return <Redirect to="/home" />;
+        return <Redirect to="/" />;
       }
 
     const redirectSignUp = () => {
