@@ -17,3 +17,4 @@
 - Timeline
 - Add Goal push to database
 - Fix Header
+- Add motivational quote API call
