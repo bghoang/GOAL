@@ -8,7 +8,6 @@ import MainBlock from "../components/MainBlock/mainblock";
 import AddButton from "../components/MainBlock/AddButton/addButton";
 import Container from 'react-bootstrap/Container'
 
-
 const Home = () =>{
   return (
     <div className="App">
