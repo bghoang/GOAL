@@ -26,8 +26,9 @@ class API extends Component {
             marginTop: "-90px"
           }}
         >
-          <div>Motivation Quote of the day:</div>
+          <div>
           {this.state.content} ({this.state.author})
+          </div>
         </Alert>
       </div>
     );
