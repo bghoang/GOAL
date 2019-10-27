@@ -16,7 +16,7 @@ class UserProfile extends Component {
       currentEmail: "",
       goals:  [" "]
     };
-    this.firebaseRef = db.database().ref("userprofile");
+    //this.firebaseRef = db.database().ref("userprofile");
   }
 
   componentDidMount() {
