@@ -12,7 +12,8 @@ class AddButton extends Component {
       status: "",
       date_added: "",
       date_completed: "",
-      dead_line: ""
+      dead_line: "",
+      category: ""
     };
 
     this.firebaseRef = db.database().ref("goals");
@@ -23,17 +24,25 @@ class AddButton extends Component {
   }
 
   pushToFirebase(event) {
-    const { goal, status, date_added, date_completed, dead_line } = this.state;
+    const {
+      goal,
+      status,
+      date_added,
+      date_completed,
+      dead_line,
+      category
+    } = this.state;
     event.preventDefault();
     this.firebaseRef
       .child(goal)
-      .set({ goal, status, date_added, date_completed, dead_line });
+      .set({ goal, status, date_added, date_completed, dead_line, category });
     this.setState({
       goal: "",
       status: "",
       date_added: "",
       date_completed: "",
-      dead_line: ""
+      dead_line: "",
+      category: ""
     });
   }
 
