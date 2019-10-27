@@ -27,7 +27,7 @@ class API extends Component {
           }}
         >
           <div>
-          {this.state.content} ({this.state.author})
+          "{this.state.content}" ({this.state.author})
           </div>
         </Alert>
       </div>

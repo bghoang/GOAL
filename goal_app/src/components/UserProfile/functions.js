@@ -70,6 +70,7 @@ export function editGoal(){
 
 export function editAvatar(){
 		var pic = document.createElement("input");
+		console.log(pic);
 		pic.type = "file";
 		pic.id = "src";
 		pic.click();
@@ -77,7 +78,7 @@ export function editAvatar(){
 		var target = document.getElementById("avatar");
 
 		showImage(pic,target);
-			
+	
 		function showImage(src,target) {
 			var fr=new FileReader();
 			// when image is loaded, set the src of the image where you want to display it
