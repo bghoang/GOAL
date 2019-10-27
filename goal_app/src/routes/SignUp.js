@@ -14,7 +14,7 @@ function pushUserIntoDB(name, email){
 }
 const SignUp = ({history}) => {
 	const redirectLogIn = () => {
-		history.push("/home")
+		history.push("/")
 	}
 	const handleSignUp = (event) => {
 
@@ -29,7 +29,7 @@ const SignUp = ({history}) => {
                                            	alert("Email has been used before, try logging in!");
                                             });
             pushUserIntoDB(name.value, email.value);
-            history.push("/home");
+            history.push("/");
         } catch(error){
             alert(error);
         }
