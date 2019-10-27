@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import db from "./db";
 import ListGroup from "react-bootstrap/ListGroup";
+import UpdateGoal from "../updateGoal/updateGoal";
+import Button from "react-bootstrap/Button";
 
 class AddGoal extends Component {
   constructor(props) {
@@ -8,10 +10,15 @@ class AddGoal extends Component {
 
     this.state = {
       currentEmail:"",
-      goals: []
+      goals: [],
+      edit: false
     };
+    this.goalEdit = this.goalEdit.bind(this)
+  };
 
-  }
+  goalEdit() {
+    this.setState({edit: true})
+  };
 
   // get current useremail
   componentDidMount() {
@@ -25,7 +32,7 @@ class AddGoal extends Component {
 
           snapshot.forEach(childSnapshot => {
             let item = childSnapshot.val();
-            if(item.Category == this.props.name) {
+            if(item.Category == this.props.name && item.Status != "Completed") {
               items.push(item);
             }
           });
@@ -36,8 +43,6 @@ class AddGoal extends Component {
         console.log("not logged in");
       }
     });
-
-    
   }
 
   componentWillUnmount() {
@@ -46,14 +51,7 @@ class AddGoal extends Component {
 
   render() {
     const nameTag = this.props.name;
-
-    function showGoal(tag, goal) {
-      if (tag === nameTag) {
-        return goal;
-      } else {
-        return;
-      }
-    }
+    
     function check(status) {
       if (status === "Inactive") {
         return "warning";
@@ -68,10 +66,11 @@ class AddGoal extends Component {
     return (
       <ListGroup>
         {this.state.goals.map(item => (
-          <ListGroup.Item variant={check(item.Status)}>
+          <ListGroup.Item variant={check(item.Status)} onClick={this.goalEdit}>
             <p>{item.Goal}</p> 
             <p>Target Date: {item.Target_Date}</p>
-            
+            <UpdateGoal edit={this.state.edit} goal={item.Goal} key={item.key}/>
+            <Button onClick={this.goalEdit}>Edit</Button>
           </ListGroup.Item>
         ))}
       </ListGroup>
