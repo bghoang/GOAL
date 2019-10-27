@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 const SignUp = ({history}) => {
 	const redirectLogIn = () => {
-		history.push("/")
+		history.push("/home")
 	}
 	const handleSignUp = (event) => {
 
@@ -18,7 +18,7 @@ const SignUp = ({history}) => {
             .auth()
             .createUserWithEmailAndPassword(email.value,
                                             password.value);
-            history.push("/");
+            history.push("/home");
         } catch(error){
             alert(error);
         }

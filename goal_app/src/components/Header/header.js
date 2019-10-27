@@ -19,19 +19,19 @@ class Header extends Component {
     return (
       <div>
         <Navbar bg="dark" variant="dark" fixed="top">
-          <Navbar.Brand href="#home" className="brand">
+          <Navbar.Brand href="home" className="brand">
               <h1 className="big-header">GOAL</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto" sticky='top'>
-              <Nav.Link href="home" className="home">
+            <Nav className="ml-auto" sticky='top'>
+              <Nav.Link href="home" className="nav-page">
                   Home
               </Nav.Link>
-              <Nav.Link href="timeline" className="timeline">
+              <Nav.Link href="timeline" className="nav-page">
                 Timeline
               </Nav.Link>
-              <Nav.Link href="goals" className="goals">
+              <Nav.Link href="goals" className="nav-page">
                 Goals
               </Nav.Link>
             </Nav>
