@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-
 import "./userprofile.css";
 import "./fontawesome/css/all.css";
 import { editUsername, editGoal, editAvatar } from "./functions.js";
@@ -17,7 +16,7 @@ class UserProfile extends Component {
       currentEmail: "",
       goals:  [" "]
     };
-    this.firebaseRef = db.database().ref("userprofile");
+    //this.firebaseRef = db.database().ref("userprofile");
   }
 
   componentDidMount() {

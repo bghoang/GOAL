@@ -21,7 +21,7 @@ class Header extends Component {
       <div>
         <Navbar bg="dark" variant="dark" fixed="top">
           <Navbar.Brand href="/" className="brand">
-              <h1 className="big-header"><p role="image" aria-label="target">G🎯AL</p></h1>
+          <h1 className="big-header"><p role="image" aria-label="target">G🎯AL</p></h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
