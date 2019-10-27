@@ -10,7 +10,12 @@ import db from '../MainBlock/Task/db';
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {currentEmail: ""};
+    this.state = {
+      name:'',
+      currentEmail: "",
+      goals:  [" "]
+    };
+    this.firebaseRef = db.database().ref("userprofile");
   }
 
   componentDidMount(){
