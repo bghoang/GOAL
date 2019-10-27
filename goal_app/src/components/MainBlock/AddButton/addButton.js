@@ -11,8 +11,6 @@ import FormControl from "react-bootstrap/FormControl";
 import Modal from "react-bootstrap/Modal";
 import "./addButton.css";
 
-
-
 class AddButton extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +33,6 @@ class AddButton extends Component {
     this.handleCatSelect = this.handleCatSelect.bind(this);
     this.handleStatSelect = this.handleStatSelect.bind(this);
     this.pushToFirebase = this.pushToFirebase.bind(this);
-    this.firebaseRef = db.database().ref("goals");
   }
     pushToFirebase(event) {
     const {goal, target_date, status, category} = event.target.elements;

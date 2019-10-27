@@ -17,7 +17,7 @@ export default [
     photo: "https://image.flaticon.com/icons/png/512/201/201623.png"
   },
   {
-    name: "Life Style",
+    name: "Lifestyle",
     photo: "https://image.flaticon.com/icons/png/512/806/806687.png"
   },
   {
